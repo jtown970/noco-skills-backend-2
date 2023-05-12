@@ -35,7 +35,7 @@ const allowedOrigins = [
   'https://noco-skills-backend.adaptable.app',
   'https://stupendous-bienenstitch-688288.netlify.app',
   'https://noco-skills-frontend.onrender.com',
-  'https://noco-skills-frontend.onrender.com/',
+  'https://noco-skills-frontend.onrender.com',
 ]
 
 const corsOptions = {
