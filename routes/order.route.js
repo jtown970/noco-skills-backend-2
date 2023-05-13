@@ -5,11 +5,11 @@ import { getOrders, intent, confirm, refund } from "../controllers/order.control
 const router = express.Router();
 
 // router.post("/:gigId", verifyToken, createOrder);
-router.get("/", getOrders);
-router.post("/create-payment-intent/:id", intent);
-router.put("/", confirm);
+router.get("/", verifyToken, getOrders);
+router.post("/create-payment-intent/:id", verifyToken, intent);
+router.put("/", verifyToken, confirm);
 
 // Add route for refunds
-router.post("/refund/:id", refund);
+router.post("/refund/:id", verifyToken, refund);
 
 export default router;
