@@ -6,10 +6,10 @@ const router = express.Router();
 
 // router.post("/:gigId", verifyToken, createOrder);
 router.get("/", getOrders);
-router.post("/create-payment-intent/:id", verifyToken, intent);
+router.post("/create-payment-intent/:id", intent);
 router.put("/", confirm);
 
 // Add route for refunds
-router.post("/refund/:id", verifyToken, refund);
+router.post("/refund/:id", refund);
 
 export default router;
