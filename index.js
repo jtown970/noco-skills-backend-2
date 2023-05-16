@@ -15,6 +15,8 @@ import cors from "cors";
 import {google} from 'googleapis';
 import axios from "axios";
 
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const app = express();
 dotenv.config();
@@ -71,6 +73,15 @@ app.use((err, req, res, next) => {
   const errorMessage = err.message || "Something went wrong!";
 
   return res.status(errorStatus).send(errorMessage);
+});
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+// Serve static files from the 'build' directory
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 const port = process.env.PORT || 8001;
