@@ -68,11 +68,11 @@ const GigSchema = new Schema(
     },
     shortTitle: {
       type: String,
-      required: true,
+      required: false,
     },
     shortDesc: {
       type: String,
-      required: true,
+      required: false,
     },
     businessHours: {
       type: [BusinessHoursSchema],
